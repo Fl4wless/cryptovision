@@ -1,5 +1,5 @@
 import React from 'react';
-import FormContext from '@/context/form-context/form-context';
+import FormContext from '@/context/form-context';
 import {
   FormikProvider,
   FormikValues,
