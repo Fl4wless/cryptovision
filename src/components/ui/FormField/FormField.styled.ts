@@ -6,6 +6,7 @@ interface FormFieldSCProps extends IFormStyleProps {}
 export const FormFieldSC = styled.div<FormFieldSCProps>`
   display: flex;
   flex-direction: ${({ layout }) => (layout === 'vertical' ? 'column' : 'row')};
+  gap: 5px;
 
   input {
     padding: ${({ size }) => (size === 'lg' ? '10px' : '5px;')};

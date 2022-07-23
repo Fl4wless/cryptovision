@@ -13,10 +13,10 @@ const Test: NextPage = () => {
 
   return (
     <Form form={form}>
-      <Form.Field>
+      <Form.Field label="test" layout="horizontal">
         <Input />
       </Form.Field>
-      <Form.Field>
+      <Form.Field label="test">
         <Input />
       </Form.Field>
       <Form.Field>
