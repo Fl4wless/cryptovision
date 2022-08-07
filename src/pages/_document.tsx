@@ -1,11 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { renderToString } from 'react-dom/server';
+import MyApp from './_app';
 
 export default function Document() {
   const sheet = new ServerStyleSheet();
   try {
-    const html = renderToString(sheet.collectStyles(<YourApp />));
+    const html = renderToString(sheet.collectStyles(<MyApp {...props} />));
     const styleTags = sheet.getStyleTags(); // or sheet.getStyleElement();
   } catch (error) {
     // handle error
