@@ -24,13 +24,24 @@ export const TableSC = styled.div`
 
     th {
       text-align: left;
+      &:first-child {
+        padding-left: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
     }
 
     thead {
-      background: ${({ theme }) => theme.colors.lightGray};
       tr {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
         th {
           padding: 10px 0px;
+          position: sticky;
+          background: ${({ theme }) => theme.colors.lightGray};
+          top: 0;
         }
       }
     }
@@ -40,8 +51,27 @@ export const TableSC = styled.div`
           background: rgba(0, 0, 0, 0.02);
           cursor: pointer;
         }
+
+        &:first-child {
+          background: gold;
+
+          .icon-wrapper {
+            display: grid;
+            place-items: center;
+            background: white;
+            width: fit-content;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+        }
+
         td {
           padding: 15px 0px;
+
+          &:first-child {
+            padding-left: 10px;
+          }
         }
       }
     }

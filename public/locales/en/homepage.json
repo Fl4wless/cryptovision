@@ -1,0 +1,13 @@
+{
+  "table": {
+    "columns": {
+      "rank": "Rank",
+      "symbol": "Symbol",
+      "name": "Name",
+      "market_cap": "Market Cap",
+      "price": "Price",
+      "24_hr_volume": "24 Hour Volume",
+      "24_hr_change": "24 Hour Change"
+    }
+  }
+}

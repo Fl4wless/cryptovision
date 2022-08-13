@@ -7,6 +7,7 @@ import GlobalStyle from '@/lib/theme/globalStyle';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from '@/lib/theme/defaultTheme';
+import { appWithTranslation } from 'next-i18next';
 
 const queryClient = new QueryClient();
 
@@ -27,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

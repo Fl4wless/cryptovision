@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { prisma } from '../server/db/client';
 import React from 'react';
@@ -8,6 +8,7 @@ import { useSession, signIn } from 'next-auth/react';
 import { useQuery } from '@tanstack/react-query';
 import { getAssetsList } from '@/services/external/crypto/assets';
 import Homepage from '@/components/pages/Homepage';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Home: NextPage = (contacts) => {
   // const handleSubmit = async () => {
@@ -39,12 +40,13 @@ const Home: NextPage = (contacts) => {
 
 export default Home;
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const contacts = await prisma.contact.findMany();
 
   return {
     props: {
       contacts,
+      ...(await serverSideTranslations(locale || 'en', ['common', 'homepage'])),
     },
   };
-}
+};
