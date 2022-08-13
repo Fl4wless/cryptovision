@@ -4,6 +4,8 @@ const defaultTheme = {
   colors: {
     primary: '#FFF',
     secondary: '#000',
+    gray: '#ACACAC',
+    lightGray: 'whitesmoke',
   },
   breakPoints: breakPoints,
 };
