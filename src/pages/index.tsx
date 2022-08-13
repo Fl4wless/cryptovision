@@ -11,6 +11,17 @@ const Home: NextPage = (contacts) => {
 
   console.log('status', status);
   console.log('data', data);
+
+  const handleSubmit = async () => {
+    const response = await axios.post('/api/predict/addPrediction', {
+      data: {
+        assetId: '1',
+        userId: data?.user!.id,
+      },
+    });
+    console.log('response', response);
+  };
+
   return (
     <>
       <Head>
@@ -20,17 +31,9 @@ const Home: NextPage = (contacts) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <button
-          onClick={() =>
-            signIn('github', {
-              callbackUrl: '/',
-            })
-          }
-        >
-          login
-        </button>
+        <button onClick={handleSubmit}>click me</button>
       </div>
-      <Table />
+      {/* <Table /> */}
     </>
   );
 };

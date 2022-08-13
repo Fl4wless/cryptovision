@@ -1,5 +1,5 @@
 import { AuthStatusEnum } from '@/types/auth';
-import { useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 import React from 'react';
 
 interface AuthWrapperProps {
