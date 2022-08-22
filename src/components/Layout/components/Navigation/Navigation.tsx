@@ -1,12 +1,18 @@
 import { BodyText } from '@/components/ui';
+import useAppContext from '@/lib/hooks/useAppContext';
 import { AuthStatusEnum } from '@/types/auth';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import React from 'react';
 import { NavigationSC } from './Navigation.styled';
 
-const Navigation: React.FC = () => {
+interface NavigationProps {
+  toggleTheme: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ toggleTheme }) => {
   const { data, status } = useSession();
+
   return (
     <NavigationSC>
       <p>Cryptovision</p>
@@ -25,6 +31,7 @@ const Navigation: React.FC = () => {
             </div>
           ) : null}
           <BodyText>{data?.user?.email}</BodyText>
+          <button onClick={toggleTheme}>change theme</button>
           <button onClick={() => signOut()}>log out</button>
         </div>
       ) : (
